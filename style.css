@@ -2,8 +2,8 @@
     --primary-color: #1a365d;
     --secondary-color: #0d2846;
     --accent-color: #00d4ff;
-    --light-color: #f8f9fa;
-    --dark-color: #212529;
+    --light-color: #212529;
+    --dark-color: #f8f9fa;
     --success-color: #28a745;
     --warning-color: #ffc107;
 }
@@ -17,8 +17,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: var(--dark-color);
-    background-color: #f5f7fa;
+    color: var(--light-color);
+    background-color: #1a1a1a;
 }
 
 .container {
@@ -37,18 +37,23 @@ body {
 
 .hero {
     text-align: center;
+    background-color: var(--secondary-color);
+    padding: 3rem 0;
+    border-radius: 8px;
 }
 
 .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    color: white;
 }
 
 .subtitle {
     font-size: 1.2rem;
     opacity: 0.9;
     margin-bottom: 2rem;
+    color: white;
 }
 
 .main-nav {
@@ -71,14 +76,18 @@ body {
     font-weight: 500;
     transition: color 0.3s ease;
     padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
 }
 
 .main-nav a:hover {
     color: var(--accent-color);
+    background-color: rgba(0, 212, 255, 0.2);
 }
 
 .section {
     padding: 4rem 0;
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .section h2 {
@@ -96,16 +105,18 @@ body {
 }
 
 .content-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .content-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .species-grid {
@@ -115,16 +126,18 @@ body {
 }
 
 .species-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .species-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .ecology-content,
@@ -138,10 +151,11 @@ body {
 .ecology-item,
 .use-item,
 .conservation-item {
-    padding: 1.5rem;
-    background: white;
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
+    padding: 1.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    color: white;
 }
 
 .ecology-item h3,
@@ -157,6 +171,9 @@ body {
     gap: 2rem;
     align-items: center;
     margin-top: 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 2rem;
 }
 
 .glow-visual {
@@ -169,6 +186,7 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .glow-pattern {
@@ -192,10 +210,11 @@ body {
 }
 
 .glow-controls {
-    background: white;
+    background: rgba(255, 255, 255, 0.1);
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
 }
 
 .glow-controls h3 {
@@ -207,61 +226,4 @@ body {
     margin-bottom: 1rem;
 }
 
-.control-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-.control-group input[type="range"],
-.control-group select {
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-}
-
-.footer {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 2rem;
-}
-
-.footer p {
-    margin-bottom: 1rem;
-}
-
-@media (max-width: 768px) {
-    .main-nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .glow-show-container {
-        grid-template-columns: 1fr;
-    }
-
-    .content-grid,
-    .species-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .glow-pattern {
-        animation: none;
-    }
-}
+.control
