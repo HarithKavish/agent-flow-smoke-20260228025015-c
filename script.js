@@ -59,12 +59,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Dark theme card styling
+    // Dark theme card styling with updated color scheme
     const cards = document.querySelectorAll('.content-card, .species-card, .ecology-item, .use-item, .conservation-item');
     cards.forEach(card => {
-        card.style.backgroundColor = '#121212';
-        card.style.color = '#f0f0f0';
-        card.style.border = '1px solid #333';
+        card.style.backgroundColor = '#2d3748';
+        card.style.color = '#e2e8f0';
+        card.style.border = '1px solid #4a5568';
         card.style.borderRadius = '8px';
         card.style.padding = '20px';
         card.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
@@ -72,26 +72,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-5px)';
-            this.style.backgroundColor = '#1e1e1e';
+            this.style.backgroundColor = '#3d566e';
             this.style.boxShadow = '0 6px 8px rgba(0, 0, 0, 0.2)';
         });
 
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0)';
-            this.style.backgroundColor = '#121212';
+            this.style.backgroundColor = '#2d3748';
             this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
         });
     });
 
-    // Add animation to introduction section
+    // Dark theme introduction section
     const introductionSection = document.getElementById('introduction');
-    introductionSection.style.backgroundColor = '#1e1e1e';
-    introductionSection.style.color = '#f0f0f0';
+    introductionSection.style.backgroundColor = '#2d3748';
+    introductionSection.style.color = '#e2e8f0';
+    introductionSection.style.padding = '40px';
+    introductionSection.style.borderTop = '1px solid #4a5568';
+    introductionSection.style.borderRadius = '8px 8px 0 0';
     introductionSection.addEventListener('scroll', function() {
         if (window.scrollY > introductionSection.offsetHeight / 2) {
             this.style.opacity = '0.95';
+            this.style.transform = 'translateY(-2px)';
         } else {
             this.style.opacity = '1';
+            this.style.transform = 'translateY(0)';
         }
     });
 });
