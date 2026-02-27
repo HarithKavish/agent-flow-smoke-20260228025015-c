@@ -6,6 +6,10 @@
     --dark-color: #f8f9fa;
     --success-color: #28a745;
     --warning-color: #ffc107;
+    --text-color: #e0e0e0;
+    --text-secondary: #adb5bd;
+    --bg-dark: #121212;
+    --bg-hover: #1e1e1e;
 }
 
 * {
@@ -17,8 +21,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: var(--light-color);
-    background-color: #1a1a1a;
+    color: var(--text-color);
+    background-color: var(--bg-dark);
 }
 
 .container {
@@ -71,23 +75,23 @@ body {
 }
 
 .main-nav a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
     padding: 0.5rem 1rem;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.05);
     border-radius: 4px;
 }
 
 .main-nav a:hover {
     color: var(--accent-color);
-    background-color: rgba(0, 212, 255, 0.2);
+    background-color: rgba(0, 212, 255, 0.1);
 }
 
 .section {
     padding: 4rem 0;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.03);
 }
 
 .section h2 {
@@ -109,14 +113,15 @@ body {
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    color: white;
+    color: var(--text-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .content-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .species-grid {
@@ -130,14 +135,15 @@ body {
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    color: white;
+    color: var(--text-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .species-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .ecology-content,
@@ -155,7 +161,8 @@ body {
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    color: white;
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .ecology-item h3,
@@ -205,25 +212,4 @@ body {
         background: linear-gradient(45deg, rgba(0, 212, 255, 0.1), rgba(0, 212, 255, 0));
     }
     100% {
-        background: linear-gradient(45deg, rgba(0, 212, 255, 0), rgba(0, 212, 255, 0.1));
-    }
-}
-
-.glow-controls {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    color: white;
-}
-
-.glow-controls h3 {
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-
-.control-group {
-    margin-bottom: 1rem;
-}
-
-.control
+        background: linear-gradient(45deg, rgba(0, 212
