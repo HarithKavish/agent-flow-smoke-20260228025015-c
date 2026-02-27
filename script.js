@@ -17,14 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         switch(color) {
             case 'blue':
-                glowColorValue = 'rgba(0, 212, 255, 0.1)';
+                glowColorValue = 'rgba(30, 144, 255, 0.1)';
                 break;
             case 'green':
-                glowColorValue = 'rgba(0, 204, 0, 0.1)';
+                glowColorValue = 'rgba(34, 197, 94, 0.1)';
                 break;
             case 'cyan':
-                glowColorValue = 'rgba(0, 255, 255, 0.1)';
+                glowColorValue = 'rgba(52, 205, 205, 0.1)';
                 break;
+            default:
+                glowColorValue = 'rgba(100, 100, 100, 0.1)';
         }
 
         glowPattern.style.background = `linear-gradient(45deg, ${glowColorValue}, ${glowColorValue})`;
@@ -32,11 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     glowIntensity.addEventListener('input', function() {
         const intensity = this.value;
-        const baseIntensity = 0.1;
-        const maxIntensity = 0.3;
+        const baseIntensity = 0.05;
+        const maxIntensity = 0.2;
 
         const adjustedIntensity = baseIntensity + (maxIntensity - baseIntensity) * (intensity / 10);
-        glowPattern.style.background = `linear-gradient(45deg, rgba(0, 212, 255, ${adjustedIntensity}), rgba(0, 212, 255, ${adjustedIntensity * 0.7}))`;
+        glowPattern.style.background = `linear-gradient(45deg, rgba(30, 144, 255, ${adjustedIntensity}), rgba(30, 144, 255, ${adjustedIntensity * 0.7}))`;
     });
 
     // Smooth scrolling for navigation links
@@ -57,26 +59,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add hover effects for cards
+    // Dark theme card styling
     const cards = document.querySelectorAll('.content-card, .species-card, .ecology-item, .use-item, .conservation-item');
     cards.forEach(card => {
+        card.style.backgroundColor = '#121212';
+        card.style.color = '#f0f0f0';
+        card.style.border = '1px solid #333';
+        card.style.borderRadius = '8px';
+        card.style.padding = '20px';
+        card.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        card.style.transition = 'all 0.3s ease';
+
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-5px)';
-            this.style.transition = 'transform 0.3s ease';
+            this.style.backgroundColor = '#1e1e1e';
+            this.style.boxShadow = '0 6px 8px rgba(0, 0, 0, 0.2)';
         });
 
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0)';
+            this.style.backgroundColor = '#121212';
+            this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
         });
     });
 
     // Add animation to introduction section
     const introductionSection = document.getElementById('introduction');
+    introductionSection.style.backgroundColor = '#1e1e1e';
+    introductionSection.style.color = '#f0f0f0';
     introductionSection.addEventListener('scroll', function() {
         if (window.scrollY > introductionSection.offsetHeight / 2) {
-            introductionSection.style.opacity = '0.95';
+            this.style.opacity = '0.95';
         } else {
-            introductionSection.style.opacity = '1';
+            this.style.opacity = '1';
         }
     });
 });
